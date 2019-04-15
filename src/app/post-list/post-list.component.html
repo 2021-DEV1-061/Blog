@@ -1,15 +1,4 @@
-<li [ngClass]="{'list-group-item':true,'list-group-item-success': loveIts>0,  'list-group-item-danger':loveIts<=0 }">
-    <h4 style="text-align: right"> {{ created_at | date: 'short'}}</h4>
-    <h2> {{ title }}</h2>
-  
-  
-  <p> {{ content }}</p>
-  <div class="controls">
-      <button class="btn btn-success open-button" (click)="loveIt()" type="button">
-        Love It!
-      </button>
-      <button class="btn btn-danger close-button" (click)="dontLoveIt()" type="button">
-        Don't Love It!
-      </button>
-    </div>
-</li>
+
+
+      <app-post-list-item *ngFor="let post of posts" [title]="post.title" [content]="post.content" [created_at]="post.created_at" [loveIts]="post.loveIts" ></app-post-list-item>
+
