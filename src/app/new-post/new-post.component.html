@@ -1,0 +1,19 @@
+
+<div class="col-sm-8 col-sm-offset-2">
+    <h1>Nouveau Post</h1>
+
+    <form [formGroup]="postForm" (ngSubmit)="onSubmitFormPost()">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" id="title" class="form-control" formControlName="title">
+      </div>
+      <div class="form-group">
+        <label for="content">Content</label>
+        <input type="text" id="content" class="form-control" formControlName="content">
+      </div>
+        <input type="hidden" id="loveIt" class="form-control" formControlName="loveIts">
+        <input type="hidden" id="date" class="form-control" formControlName="created_at">
+
+      <button type="submit" [disabled]="postForm.invalid" class="btn btn-primary">Soumettre</button>
+    </form>
+  </div>
